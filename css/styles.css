@@ -3,7 +3,10 @@
     /* color: #8e8e8e; */
     /* transition: color .15s ease-in-out !important; */
 /* } */
-
+body {
+    background-color: #000 !important;
+    color: #fff !important;
+}
 
 .my-header-style {
     color: white !important;   
@@ -14,4 +17,8 @@ background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%,
 .skill-card {
     background-color: #0936776b !important;
     
+}
+
+.jumbotron {
+    color: #000 !important;
 }
