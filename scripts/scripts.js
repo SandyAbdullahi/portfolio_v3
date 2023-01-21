@@ -11,10 +11,10 @@ var colors = [
     "#ff0000",
     "#000000"];
 
-var $div = $('a#my-header-style');
+var $div = $('#my-header-style');
 console.log($div);
 var interval;
-$('a#my-header-style').mouseenter(function () {
+$('#my-header-style').mouseenter(function () {
     interval = window.setInterval(changeColor, 10); //set the interval of 1 sec for image to change while hovered.
 
 }).mouseleave(function () {
