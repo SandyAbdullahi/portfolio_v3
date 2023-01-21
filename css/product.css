@@ -16,7 +16,8 @@
   transition: color .15s ease-in-out;
 }
 .site-header a:hover {
-  color: #fff;
+  /* color: #fff; */
+  color: rgba(131,58,180,1);
   text-decoration: none;
 }
 
