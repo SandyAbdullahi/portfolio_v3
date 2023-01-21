@@ -35,30 +35,46 @@ function changeColor() {
  
 
 //  LOGO
-   // Get the canvas element
-   var canvas = document.getElementById("myCanvas");
-   // Check if the canvas is supported on the browser
-   if (canvas.getContext) {
-       // Get the 2D rendering context
-       var ctx = canvas.getContext("2d");
-       // Draw a rectangle
-       ctx.fillStyle = "#5e5e5e";
-       ctx.fillRect(0, 0, 50, 50);
-       // Draw a circle
-       ctx.beginPath();
-       ctx.arc(25, 25, 20, 0, 2 * Math.PI);
-       ctx.fill();
-       // Draw lines
-       ctx.beginPath();
-       ctx.moveTo(25, 0);
-       ctx.lineTo(25, 50);
-       ctx.moveTo(0, 25);
-       ctx.lineTo(50, 25);
-       ctx.stroke();
-       // Draw a cloud
-       ctx.beginPath();
-       ctx.arc(35, 10, 10, 0, Math.PI, true);
-       ctx.arc(15, 10, 10, 0, Math.PI, true);
-       ctx.arc(25, 20, 15, 0, Math.PI, true);
-       ctx.fill();
-   }
+    // Get the canvas element
+    var canvas = document.getElementById("myCanvas");
+    // Check if the canvas is supported on the browser
+    if (canvas.getContext) {
+        // Get the 2D rendering context
+        var ctx = canvas.getContext("2d");
+        var rotation = 0;
+        //Animate the logo
+        setInterval(animate, 100);
+        function animate() {
+            ctx.clearRect(0, 0, 50, 50);
+            ctx.save();
+            ctx.translate(25, 25);
+            ctx.rotate(rotation);
+            ctx.translate(-25, -25);
+            // Draw a rectangle
+            ctx.fillStyle = "#00b8d4";
+            ctx.fillRect(0, 0, 50, 50);
+            // Draw a circle
+            ctx.beginPath();
+            ctx.arc(25, 25, 20, 0, 2 * Math.PI);
+            ctx.fill();
+            // Draw lines
+            ctx.beginPath();
+            ctx.moveTo(10, 10);
+            ctx.lineTo(40, 40);
+            ctx.moveTo(40, 10);
+            ctx.lineTo(10, 40);
+            ctx.stroke();
+            // Draw a triangle
+            ctx.beginPath();
+            ctx.moveTo(25, 0);
+            ctx.lineTo(40, 25);
+            ctx.lineTo(10, 25);
+            ctx.fill();
+            // Draw a semicircle
+            ctx.beginPath();
+            ctx.arc(25, 25, 20, 0, Math.PI, true);
+            ctx.fill();
+            ctx.restore();
+            rotation += Math.PI / 180;
+        }
+    }
